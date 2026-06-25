@@ -1,1 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>❤️ Sara Isabella ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4,#ffd1dc);
+overflow-x:hidden;
+color:white;
+text-align:center;
+}
+
+/* Corazones */
+
+.heart{
+position:fixed;
+top:-20px;
+font-size:25px;
+animation:fall linear infinite;
+pointer-events:none;
+z-index:1;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh);
+}
+}
+
+/* Tulipanes */
+
+.tulip{
+position:fixed;
+font-size:30px;
+pointer-events:none;
+z-index:1;
+animation:float 6s ease-in-out infinite;
+}
+
+@keyframes float{
+50%{
+transform:translateY(-15px);
+}
+}
+
+/* Contenido */
+
+.container{
+position:relative;
+z-index:5;
+padding:30px;
+}
+
+h1{
+font-size:70px;
+margin-top:20px;
+text-shadow:0 0 20px #ff0066;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+50%{
+transform:scale(1.05);
+}
+}
+
+h2{
+margin-top:10px;
+font-size:35px;
+}
+
+.card{
+max-width:1000px;
+margin:40px auto;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(12px);
+padding:30px;
+border-radius:25px;
+box-shadow:0 0 25px rgba(255,255,255,.3);
+line-height:1.8;
+font-size:22px;
+}
+
+.contador{
+font-size:32px;
+margin:30px;
+font-weight:bold;
+color:#fff;
+text-shadow:0 0 10px #ff0066;
+}
+
+.galeria{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+margin-top:40px;
+}
+
+.galeria img{
+width:280px;
+height:350px;
+object-fit:cover;
+border-radius:20px;
+box-shadow:0 0 20px rgba(255,255,255,.5);
+transition:.4s;
+}
+
+.galeria img:hover{
+transform:scale(1.05);
+}
+
+.boton{
+display:inline-block;
+margin-top:30px;
+padding:15px 30px;
+background:#ff4d88;
+color:white;
+border:none;
+border-radius:50px;
+font-size:20px;
+cursor:pointer;
+box-shadow:0 0 15px rgba(255,255,255,.5);
+}
+
+.boton:hover{
+transform:scale(1.05);
+}
+
+footer{
+margin-top:60px;
+padding:30px;
+font-size:25px;
+}
+
+.snoopy{
+font-size:45px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>❤️ I LOVE YOU ❤️</h1>
+
+<h2>🌷 Sara Isabella Beru León 🌷</h2>
+
+<div class="contador" id="contador"></div>
+
+<div class="card">
+
+<p>
+
+Feliz día mi princesa hermosa. ❤️
+
+<br><br>
+
+Te amo mucho, gracias por ser como eres y mucho más.
+
+Eres el mejor regalo que Dios y la vida me han podido dar.
+
+Eres mi todo, mi mundo.
+
+Aparte de que eres mi novia, quiero que sepas que también eres mi mejor amiga, mi compañera y sobre todo mi camino y mi presente más bonito.
+
+<br><br>
+
+Mi futuro que más anhelo es poder estar junto a ti como los patos, para toda la vida. 🦆❤️
+
+Quiero verte cumplir tus metas y tus propósitos y ojalá estar ahí para aplaudirte.
+
+Te amo mucho y siempre estaré para ti en las buenas y en las malas.
+
+<br><br>
+
+Ojalá nunca te canses de ser así conmigo.
+
+Te amo mucho y jamás me cansaré de decírtelo.
+
+Te amo y te adoro bastante.
+
+Gracias por ser tú y exactamente como eres.
+
+<br><br>
+
+❤️ Gracias por todo ❤️
+
+<br><br>
+
+Con muchísimo amor,
+
+<br>
+
+💖 Tu novio Dilan 💖
+
+</p>
+
+</div>
+
+<h2>📸 Nuestros recuerdos 📸</h2>
+
+<div class="galeria">
+
+<img src="foto1.jpg" alt="">
+<img src="foto2.jpg" alt="">
+<img src="foto3.jpg" alt="">
+<img src="foto4.jpg" alt="">
+
+</div>
+
+<button class="boton" onclick="reproducir()">
+🎵 Reproducir Birds Of A Feather
+</button>
+
+<audio id="musica" controls style="margin-top:20px;display:block;margin-left:auto;margin-right:auto;">
+<source src="birds.mp3" type="audio/mpeg">
+</audio>
+
+<footer>
+
+🌷🐶❤️ Como los patos, para toda la vida ❤️🐶🌷
+
+<br><br>
+
+<span class="snoopy">🐶</span>
+
+</footer>
+
+</div>
+
+<script>
+
+/* Contador */
+
+const fechaFinal = new Date("2026-10-31T00:00:00");
+
+function actualizarContador(){
+
+const ahora = new Date();
+const diferencia = fechaFinal - ahora;
+
+const dias = Math.floor(diferencia/(1000*60*60*24));
+const horas = Math.floor((diferencia%(1000*60*60*24))/(1000*60*60));
+const minutos = Math.floor((diferencia%(1000*60*60))/(1000*60));
+
+document.getElementById("contador").innerHTML =
+"⏳ Faltan " + dias +
+" días, " + horas +
+" horas y " + minutos +
+" minutos para nuestro 31/10/2026 ❤️";
+
+}
+
+setInterval(actualizarContador,1000);
+actualizarContador();
+
+/* Corazones */
+
+for(let i=0;i<60;i++){
+
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(Math.random()*6+4)+"s";
+
+document.body.appendChild(heart);
+
+}
+
+/* Tulipanes */
+
+for(let i=0;i<25;i++){
+
+let tulip=document.createElement("div");
+
+tulip.className="tulip";
+tulip.innerHTML="🌷";
+
+tulip.style.left=Math.random()*100+"vw";
+tulip.style.top=Math.random()*100+"vh";
+
+document.body.appendChild(tulip);
+
+}
+
+function reproducir(){
+
+document.getElementById("musica").play();
+
+}
+
+</script>
+
+</body>
+</html>
